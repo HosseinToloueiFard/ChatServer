@@ -69,8 +69,8 @@ fn main() {
         std::process::exit(0);
     }).expect("Error setting Ctrl-C handler");
 
-    let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
-    println!("Server listening on 127.0.0.1:8080");
+    let listener = TcpListener::bind("YourIp:8080").unwrap();
+    println!("Server listening on YourIp:8080");
 
     let clients: Arc<Mutex<HashMap<String, TcpStream>>> = Arc::new(Mutex::new(HashMap::new()));
     let credentials = Arc::new(Mutex::new(load_credentials()));
